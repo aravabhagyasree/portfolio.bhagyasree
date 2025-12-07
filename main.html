@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website </title>
+    <style>
+        :root {
+            --space-indigo: #22223bff;
+            --dusty-grape: #4a4e69ff;
+            --lilac-ash: #9a8c98ff;
+            --almond-silk: #c9ada7ff;
+            --parchment: #f2e9e4ff;
+        }
+        /* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #0d0f1f, #11182a);
+    padding: 120px 0;
+    color: white;
+}
+
+.hero-tag {
+    color: #c9ada7ff;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero-title .highlight {
+    font-style: italic;
+    color: #c9ada7ff;
+}
+
+.hero-sub {
+    max-width: 600px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: #c9ada7ff;
+    padding: 15px 35px;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    border: 1px solid #fff;
+    padding: 15px 35px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+        body {
+            font-family: "Poppins", sans-serif;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+            background: var(--parchment);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease; /* Smooth mode transition */
+            scroll-behavior: smooth;
+        }
+
+        /* Main centered container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header {
+            background: var(--space-indigo);
+            color: var(--parchment);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+        }
+        .header-content {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .header-content h1, .header-content p {
+            color: var(--almond-silk); 
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--space-indigo);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--almond-silk);
+            /* Added margin to separate the logo from the centered nav links */
+            margin-right: 40px; 
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--parchment);
+            font-weight: 400;
+            padding: 5px 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            transition: border-bottom 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 2px solid var(--almond-silk);
+            color: var(--almond-silk);
+        }
+        .section {
+            padding: 50px 0;
+            color: var(--space-indigo);
+        }
+
+        .section h2 {
+            border-bottom: 2px solid var(--dusty-grape);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Card layout container */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+         /* ====== Styles to add into your main <style> block (head) ====== */
+
+        .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        }
+
+        .skill-card {
+        background: linear-gradient(180deg,#c9ada7ff);
+        border: 1px solid rgba(154,140,152,0.08);
+        padding: 18px;
+        border-radius: 12px;
+        color: var(--space-indigo);
+        box-shadow: 0 6px 18px rgba(34,34,59,0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover transition */
+        }
+        /* Skill Card Hover Effect */
+        .skill-card:hover {
+        transform: translateY(-8px);   
+        box-shadow:0 12px 25px rgba(0, 0, 0, 0.2); 
+        }
+
+        .skill-card h3 {
+        margin: 0 0 8px 0;
+        font-size: 1.02rem;
+        color: var(--space-indigo);
+        }
+
+        .skill-card ul {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--space-indigo);
+        }
+
+        .skill-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        }
+
+        .badge {
+        background: var(--almond-silk);
+        color: var(--space-indigo);
+        padding: 8px 12px;
+        border-radius: 18px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--almond-silk);
+            color: var(--space-indigo);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover transition */
+        }
+        /* Project Card Hover Effect */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            border-bottom: 1px dashed var(--lilac-ash);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            font-size: 0.95em;
+        }
+
+        .card strong {
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--dusty-grape);
+            color: var(--parchment);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"> Arava Bhagyasree</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <p class="hero-tag"> ASPIRING DATA SCIENTIST | AI ENGINEER | ML SPECIALIST</p>
+    
+            <h1 class="hero-title">
+                Transforming Data<br>
+                into <span class="highlight">Intelligent</span> Solutions.
+            </h1>
+    
+            <p class="hero-sub">
+                I build AI-driven, elegant, and user-centered digital experiences.
+            </p>
+    
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    
+
+<div class="section" id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I'm Arava Bhagyasree, an aspiring Data Scientist passionate about building intelligent systems that solve real-world problems. With expertise in Machine Learning, Natural Language Processing, and Generative AI, I transform complex data into actionable insights and automated solutions.</p>
+        <p>Proficient in analyzing complex datasets, building predictive models, and developing intelligent systems using Python and modern ML frameworks.</p>
+        <p>Experienced in statistical analysis, deep learning, and generative AI with a focus on creating practical solutions across various domains.</p>
+    </div>
+</div>
+
+<section class="section" id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+  
+      <p style="opacity:0.85; margin-top:8px;">
+        I work with a versatile tech stack across data science, AI & ML and analytics.</p>
+        <p>Here are some of the key skills and tools I utilize:</p>
+  
+      <div class="skills-grid" style="margin-top:22px;">
+        <div class="skill-card">
+          <h3>Data Science</h3>
+          <ul>
+            <li>Exploratory Data Analysis (EDA)</li>
+            <li>Data Cleaning & Preprocessing</li>
+            <li>Feature Engineering</li>
+            <li>Data Visualization</li>
+          </ul>
+        </div>
+  
+        <div class="skill-card">
+          <h3>AI & Machine Learning</h3>
+          <ul>
+            <li>Supervised & Unsupervised Learning</li>
+            <li>Regression & Classification</li>
+            <li>Clustering (K-Means, DBSCAN)</li>
+            <li>NLP (Text preprocessing, embeddings)</li>
+            <li>Model Evaluation & Optimization</li>
+          </ul>
+        </div>
+  
+        <div class="skill-card">
+          <h3>Libraries & Frameworks</h3>
+          <ul>
+            <li>Python • Pandas • NumPy</li>
+            <li>Scikit-learn • Matplotlib • Seaborn</li>
+            <li>PyTorch • Keras (basic)</li>
+            <li>LangChain (basics) • Hugging Face (basic)</li>
+          </ul>
+        </div>
+  
+        <div class="skill-card">
+          <h3>Cloud, DBs & Tools</h3>
+          <ul>
+            <li>MySQL • MongoDB (basic)</li>
+            <li>Google Colab • Jupyter Notebook • Kaggle</li>
+            <li>Git & GitHub • VS Code</li>
+            <li>Power BI (basic) • Excel (advanced)</li>
+          </ul>
+        </div>
+  
+        <div class="skill-card">
+          <h3>Languages & Web</h3>
+          <ul>
+            <li>Python • SQL</li>
+            <li>HTML & CSS (basic)</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Optional quick-skill badges (small visual emphasis) -->
+      <div class="skill-badges" style="margin-top:18px;">
+        <span class="badge">Python</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">Scikit-Learn</span>
+        <span class="badge">PyTorch</span>
+        <span class="badge">SQL</span>
+        <span class="badge">Git</span>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+<div class="section" id="experience">
+    <div class="container">
+        <h2>Experience</h2>
+
+        <div class="card">
+            <h3>Machine Learning Intern —  Jul~Aug 2025</h3>
+            <ul>
+                <li>Developed and fine-tuned supervised learning models (Logistic Regression, Random Forest, SVM).</li>
+                <li>Applied techniques in data preprocessing, feature engineering, and model evaluation.</li>
+            </ul>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Data Analyst Intern —  Apr~May 2025</h3>
+            <ul>
+                <li>Worked on real-time datasets for analysis & predictive modeling</li>
+                <li>Performed EDA, visualization & ML model building</li>
+                <li>Built dashboards and automated reporting pipelines</li>
+            </ul>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>AI/ML Projects (Independent)</h3>
+            <ul>
+                <li>Developed AI-driven applications using LangChain & Groq LLMs</li>
+                <li>Specialized in model optimization & pipeline automation</li>
+                <li>Hands-on with NLP, CV & ML deployment</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+
+        <div class="projects">
+            <div class="card">
+                <h3>MediFlow AI</h3>
+                <p style="font-size: 13px; opacity: 0.5;">Intelligent Healthcare at Your Fingertips</p>
+                <p><strong>Brief Description:</strong> An end-to-end AI-powered hospital assistant that automates triage, department allocation, and workflow integration.</p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Automated patient profile & symptom triage</li>
+                    <li>ChatGroq + LangChain + LangGraph based pipeline</li>
+                    <li>Auto prescription & payment flow</li>
+                    <li>Follow‑up reminders</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> Python, LangGraph, LangChain, Groq LLM</p>
+            </div>
+
+            <div class="card">
+                <h3>RAG Model Development</h3>
+                <p style="font-size: 13px; opacity: 0.5;">Smart Retrieval Meets Powerful Generation</p>
+                <p><strong>Brief Description:</strong>A robust Retrieval-Augmented Generation (RAG) pipeline designed to enhance accuracy by combining vector search with generative intelligence. Built for high-performance querying, contextual responses, and scalable knowledge retrieval.<p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Integrated LangChain workflow with Chroma vector database</li>
+                    <li>Optimized retrieval pipeline for low latency and improved relevance</li>
+                    <li>Modular and scalable design suitable for enterprise-level knowledge systems</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> LangChain, ChromaDB, Google Generative AI Embeddings</p>
+            </div>
+
+            <div class="card">
+                <h3>Finance Agent AI</h3>
+                <p style="font-size: 13px; opacity: 0.5;">AI-Powered Financial Intelligence & Real-Time Reasoning</p>
+                <p><strong>Brief Description:</strong>A specialized AI agent designed for financial analysis, real-time reasoning, and query handling. Built using Groq’s ultra-fast LLaMA3 model to provide instant insights for budgeting, forecasting, and financial decision-making.</p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Developed using Groq LLaMA3 for lightning-fast inference</li>
+                    <li>Integrated LangChain tools for structured reasoning and agent workflows</li>
+                    <li>Handles financial Q&A, pattern detection, and real-time computation</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> Python, Groq LLaMA3, LangChain, Groq API</p>
+            </div>
+
+            <div class="card">
+                <h3>Gemini Chat Assistant</h3>
+                <p style="font-size: 13px; opacity: 0.5;">Fast, Interactive & Always-On AI Assistance</p>
+                <p><strong>Brief Description:</strong>A Streamlit-powered conversational AI assistant that enables real-time interactions using Google Gemini 1.5 Flash. Designed with a clean UI and optimized for fast, context-aware responses.</p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Real-time chat interface built with Streamlit</li>
+                    <li>Powered by Google Gemini 1.5 Flash for ultra-fast responses</li>
+                    <li>Supports conversation history and context retention</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> Python, Streamlit, Google Gemini 1.5 Flash, Google GenAI API</p>
+            </div>
+
+            <div class="card">
+                <h3>House Price Prediction</h3>
+                <p style="font-size: 13px; opacity: 0.5;">Smart Real Estate Analytics</p>
+                <p><strong>Brief Description:</strong> A machine learning solution predicting housing prices using advanced regression & PyTorch models.</p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Feature analysis: area, location, rooms, amenities</li>
+                    <li>Ridge, Lasso, RF, Gradient Boosting models</li>
+                    <li>Optimized for accurate predictions</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> Python, PyTorch, Scikit‑learn</p>
+            </div>
+
+            <div class="card">
+                <h3>Bank Loan Default Analysis</h3>
+                <p style="font-size: 13px; opacity: 0.5;">Data‑Driven Risk Intelligence</p>
+                <p><strong>Brief Description:</strong> EDA project revealing repayment patterns & default indicators.</p>
+                <strong>Key Highlights:</strong>
+                <ul>
+                    <li>Deep analysis of borrower behavior</li>
+                    <li>Variable impact interpretation</li>
+                    <li>Risk mitigation insights</li>
+                </ul>
+                <p><strong>Tech Stack:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" id="education">
+    <div class="container">
+        <h2>Education</h2>
+
+        <div class="card">
+            <h3>MCA — Sri Venkateshwara University</h3>
+            <p>CGPA: 8.1</p>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>BCA - Rao's Degree College</h3>
+            <p>CGPA: 9.15</p>
+        </div>
+    </div>
+</div>
+
+<div class="section" id="contact">
+    <div class="container">
+        <h2>Let's Connect</h2>
+        <p>Interested in collaborating or discussing data science projects? I'd love to hear from you!</p>
+        
+        <p><strong>+917901359110</strong></p>
+        <p><strong>Hyderabad, Telangana</strong></p>
+        <p><a href="mailto:aravabhagyasreee001@gmail.com" style="color: var(--space-indigo); text-decoration: none;">aravabhagyasreee001@gmail.com</a></p>
+
+        <p>
+            <i class="fab fa-linkedin" style="font-size: 22px; margin-right: 10px;"></i>
+            <a href="https://www.linkedin.com/in/aravabhagyasree/" target="_blank" style="color: var(--space-indigo); text-decoration: none;">LinkedIn Profile</a>
+        </p>
+
+        <p>
+            <i class="fab fa-github" style="font-size: 22px; margin-right: 10px;"></i>
+            <a href="https://github.com/aravabhagyasree" target="_blank" style="color: var(--space-indigo); text-decoration: none;">GitHub Profile</a>
+        </p>
+    
+        <!-- CTA Buttons -->
+        <div class="cta-buttons">
+            <a href="mailto:aravabhagyasreee001@gmail.com" class="btn">Send a Message</a>
+            <a href="Arava_Bhagyasree_CV.pdf" download class="btn">Download Resume</a>
+        </div>
+        <div>
+            <style>
+            .cta-buttons {
+                margin-top: 1.5rem;
+            }
+
+        .btn {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--dusty-grape);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--space-indigo);
+        }
+
+        /* Optional: style phone & location */
+        #contact .container p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        </style>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Bhagyasree Arava. All rights reserved.
+</footer>
+
+</body>
+</html>
